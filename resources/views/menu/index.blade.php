@@ -20,7 +20,8 @@
     <a href="menu/create" class="btn btn-primary mb-3">Tambah Menu</a>
 
     <div class="container">
-        <table class="table table-striped table-hover table-bordered text-center mb-4"> <!-- Tambahkan kelas table-bordered untuk mempertebal garis tabel -->
+        <table class="table table-striped table-hover table-bordered text-center mb-4">
+            <!-- Tambahkan kelas table-bordered untuk mempertebal garis tabel -->
             <thead>
                 <tr>
                     <th>Nama</th>

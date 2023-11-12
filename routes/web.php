@@ -2,68 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\CrudController;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 Route::get('/', function () {
     return view('auth/login');
 });
-
-Route::get('index', [CrudController::class, 'index']);
 
 Route::controller(AuthController::class)->group(function () {
     Route::get('register', 'register')->name('register');
