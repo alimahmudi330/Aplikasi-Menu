@@ -1,4 +1,4 @@
-@extends('crud.index')
+@extends('crud.dash')
 
 @section('title', 'Dashboard - Laravel Admin Panel With Login and Registration')
 

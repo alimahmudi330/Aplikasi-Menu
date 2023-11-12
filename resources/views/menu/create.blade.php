@@ -4,39 +4,40 @@
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        /* CSS tambahan untuk mengatur tampilan form */
-        .form-container {
-            max-width: 500px;
-            margin: 0 auto;
-            background-color: #f4f4f4;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+    /* CSS tambahan untuk mengatur tampilan form */
+    .form-container {
+        max-width: 500px;
+        margin: 0 auto;
+        background-color: #f4f4f4;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
 
-        .form-label {
-            font-weight: bold;
-        }
+    .form-label {
+        font-weight: bold;
+    }
 
-        .form-control {
-            width: 100%;
-        }
+    .form-control {
+        width: 100%;
+    }
 
-        /* Menyembunyikan input type="file yang biasanya tidak dapat diubah tampilannya */
-        input[type="file"] {
-            display: none;
-        }
+    /* Menyembunyikan input type="file yang biasanya tidak dapat diubah tampilannya */
+    input[type="file"] {
+        display: none;
+    }
 
-        .custom-file-label::after {
-            content: "Pilih Gambar";
-        }
+    .custom-file-label::after {
+        content: "Pilih Gambar";
+    }
     </style>
 </head>
 
 <body>
 
     <div class="container">
-        <div class="form-container text-center"> <!-- Menggunakan kelas text-center untuk membuat elemen berada di tengah -->
+        <div class="form-container text-center">
+            <!-- Menggunakan kelas text-center untuk membuat elemen berada di tengah -->
             <h1 class="mb-4">Tambah Menu</h1>
             <form method="POST" action="{{ route('menu.store') }}" enctype="multipart/form-data">
                 @csrf
