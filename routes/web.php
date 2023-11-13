@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CrudsController;
 
 Route::get('/', function () {
     return view('auth/login');
@@ -54,3 +55,9 @@ Route::get(
     '/menu/{id_menu}',
     'App\Http\Controllers\MenuController@destroy'
 )->name('menu.destroy');
+
+
+
+//pny Ali
+
+Route::get('/cruds', [App\Http\Controllers\CrudsController::class, 'index'])->name('cruds');
