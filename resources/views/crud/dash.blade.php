@@ -11,7 +11,6 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
-    <link href="dashboard.css" rel="stylesheet">
 
     <style>
         body {
@@ -160,9 +159,9 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" target="_blank" href="https://www.instagram.com/ali.mahmudi_/">
+                            <a class="nav-link" href="{{ url('menu/index') }}">
                                 <span data-feather="users"></span>
-                                Contact
+                                CRUD
                             </a>
                         </li>
                         <li class="nav-item">
@@ -184,7 +183,7 @@
                 <div class="mx-auto">
                     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                         <h1 class="h2">View Data</h1>
-                        <a href="index.blade.php"><button type="button" class="btn btn-primary">CRUD</button></a>
+                        <a href=""><button type="button" class="btn btn-primary">CRUD</button></a>
                     </div>
 
                 </div>

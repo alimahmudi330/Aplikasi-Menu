@@ -11,12 +11,12 @@ class MenuController extends Controller
     public function index()
     {
         $menu = Menu::all();
-        return view('index', compact('menu'));
+        return view('menu.index', compact('menu'));
     }
 
     public function create()
     {
-        return view('create');
+        return view('menu.create');
     }
 
     public function store(Request $request)
@@ -32,7 +32,7 @@ class MenuController extends Controller
 
         $imagePath = null;
         if ($request->hasFile('gambar')) {
-            $imagePath = $request->file('gambar')->store('public/fotomenu');
+            $imagePath = $request->file('gambar')->store('/public/fotomenu');
         }
 
         Menu::create([
@@ -53,7 +53,7 @@ class MenuController extends Controller
         if (!$menu) {
             return redirect()->route('menu.index')->with('error', 'Data menu tidak ditemukan.');
         }
-        return view('edit', compact('menu'));
+        return view('menu.edit', compact('menu'));
     }
 
     public function update(Request $request, $id_menu)
