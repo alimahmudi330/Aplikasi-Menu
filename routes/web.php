@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CrudsController;
+use App\Http\Controllers\CustomerController;
 
 Route::get('/', function () {
     return view('auth/login');
@@ -61,3 +62,5 @@ Route::get(
 //pny Ali
 
 Route::get('/cruds', [App\Http\Controllers\CrudsController::class, 'index'])->name('cruds');
+Route::get('/customer/menu', [CustomerController::class, 'showMenu'])->name('customer.menu');
+Route::get('/customer/cart', [CustomerController::class, 'showCart'])->name('customer.cart');
