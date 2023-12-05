@@ -2,9 +2,10 @@
 
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CrudsController;
-use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\StripeController;
+use App\Http\Controllers\ProductsController;
 
+//Punya Ali
 Route::get('/', function () {
     return view('auth/login');
 });
@@ -26,7 +27,19 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/profile', [App\Http\Controllers\AuthController::class, 'profile'])->name('profile');
 });
+//Punya Ali
+Route::post('/session', [StripeController::class, 'session'])->name('session');
+Route::get('/success', [StripeController::class, 'success'])->name('success');
+Route::get('/cancel', [StripeController::class, 'cancel'])->name('cancel');
 
+Route::get('/', [ProductsController::class, 'index']);
+Route::get('cart', [ProductsController::class, 'cart'])->name('cart');
+Route::get('add-to-cart/{id}', [ProductsController::class, 'addToCart'])->name('add_to_cart');
+Route::patch('update-cart', [ProductsController::class, 'update'])->name('update_cart');
+Route::delete('remove-from-cart', [ProductsController::class, 'remove'])->name('remove_from_cart');
+
+
+//pny Faisal
 // Menampilkan daftar buku (Read)
 Route::get(
     '/menu',
@@ -56,11 +69,3 @@ Route::get(
     '/menu/{id_menu}',
     'App\Http\Controllers\MenuController@destroy'
 )->name('menu.destroy');
-
-
-
-//pny Ali
-
-Route::get('/cruds', [App\Http\Controllers\CrudsController::class, 'index'])->name('cruds');
-Route::get('/customer/menu', [CustomerController::class, 'showMenu'])->name('customer.menu');
-Route::get('/customer/cart', [CustomerController::class, 'showCart'])->name('customer.cart');
