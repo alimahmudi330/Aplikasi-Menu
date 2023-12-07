@@ -15,23 +15,21 @@
         @php $total = 0 @endphp
         @if(session('cart'))
         @foreach(session('cart') as $id => $details)
-        @php $total += $details['price'] * $details['quantity'] @endphp
+        @php $total += $details['harga'] * $details['quantity'] @endphp
         <tr data-id="{{ $id }}">
             <td data-th="Product">
                 <div class="row">
-                    <div class="col-sm-3 hidden-xs"><img src="{{ asset('img') }}/{{ $details['photo'] }}" width="100"
-                            height="100" class="img-responsive" /></div>
+                    <div class="col-sm-3 hidden-xs"><img src="{{ asset('img') }}/{{ $details['gambar'] }}" width="100" height="100" class="img-responsive" /></div>
                     <div class="col-sm-9">
-                        <h4 class="nomargin">{{ $details['product_name'] }}</h4>
+                        <h4 class="nomargin">{{ $details['nama_menu'] }}</h4>
                     </div>
                 </div>
             </td>
-            <td data-th="Price">Rp{{ $details['price'] }}</td>
+            <td data-th="Price">Rp{{ $details['harga'] }}</td>
             <td data-th="Quantity">
-                <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity cart_update"
-                    min="1" />
+                <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity cart_update" min="1" />
             </td>
-            <td data-th="Subtotal" class="text-center">Rp{{ $details['price'] * $details['quantity'] }}</td>
+            <td data-th="Subtotal" class="text-center">Rp{{ $details['harga'] * $details['quantity'] }}</td>
             <td class="actions" data-th="">
                 <button class="btn btn-danger btn-sm cart_remove"><i class="fa fa-trash-o"></i> Delete</button>
             </td>
@@ -62,43 +60,43 @@
 
 @section('scripts')
 <script type="text/javascript">
-$(".cart_update").change(function(e) {
-    e.preventDefault();
+    $(".cart_update").change(function(e) {
+        e.preventDefault();
 
-    var ele = $(this);
+        var ele = $(this);
 
-    $.ajax({
-        url: '/update_cart',
-        method: "patch",
-        data: {
-            _token: '{{ csrf_token() }}',
-            id: ele.parents("tr").attr("data-id"),
-            quantity: ele.parents("tr").find(".quantity").val()
-        },
-        success: function(response) {
-            window.location.reload();
-        }
-    });
-});
-
-$(".cart_remove").click(function(e) {
-    e.preventDefault();
-
-    var ele = $(this);
-
-    if (confirm("Do you really want to remove?")) {
         $.ajax({
-            url: '/remove_from_cart',
-            method: "DELETE",
+            url: '/update_cart',
+            method: "patch",
             data: {
                 _token: '{{ csrf_token() }}',
-                id: ele.parents("tr").attr("data-id")
+                id: ele.parents("tr").attr("data-id"),
+                quantity: ele.parents("tr").find(".quantity").val()
             },
             success: function(response) {
                 window.location.reload();
             }
         });
-    }
-});
+    });
+
+    $(".cart_remove").click(function(e) {
+        e.preventDefault();
+
+        var ele = $(this);
+
+        if (confirm("Do you really want to remove?")) {
+            $.ajax({
+                url: 'remove_from_cart',
+                method: "DELETE",
+                data: {
+                    _token: '{{ csrf_token() }}',
+                    id: ele.parents("tr").attr("data-id")
+                },
+                success: function(response) {
+                    window.location.reload();
+                }
+            });
+        }
+    });
 </script>
 @endsection

@@ -22,17 +22,17 @@ class StripeController extends Controller
 
         foreach (session('cart') as $id => $details) {
 
-            $product_name = $details['product_name'];
-            $total = $details['price'];
+            $nama_menu = $details['nama_menu'];
+            $harga = $details['harga'];
             $quantity = $details['quantity'];
 
             $two0 = "00";
-            $unit_amount = "$total$two0";
+            $unit_amount = "$harga$two0";
 
             $productItems[] = [
                 'price_data' => [
                     'product_data' => [
-                        'name' => $product_name,
+                        'name' => $nama_menu,
                     ],
                     'currency'     => 'USD',
                     'unit_amount'  => $unit_amount,
