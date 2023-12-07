@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Product;
+use App\Models\Menu;
+
 
 class ProductsController extends Controller
 {
     public function index()
     {
-        $products = Product::all();
+        $products = Menu::all();
         return view('customer.products', compact('products'));
     }
 
@@ -19,7 +20,7 @@ class ProductsController extends Controller
     }
     public function addToCart($id)
     {
-        $product = Product::findOrFail($id);
+        $product = Menu::findOrFail($id);
 
         $cart = session()->get('cart', []);
 
@@ -27,9 +28,9 @@ class ProductsController extends Controller
             $cart[$id]['quantity']++;
         } else {
             $cart[$id] = [
-                "product_name" => $product->product_name,
-                "photo" => $product->photo,
-                "price" => $product->price,
+                "nama_menu" => $product->nama_menu,
+                "gambar" => $product->gambar,
+                "harga" => $product->harga,
                 "quantity" => 1
             ];
         }

@@ -24,7 +24,7 @@
                         <div class="row total-header-section">
                             @php $total = 0 @endphp
                             @foreach((array) session('cart') as $id => $details)
-                            @php $total += $details['price'] * $details['quantity'] @endphp
+                            @php $total += $details['harga'] * $details['quantity'] @endphp
                             @endforeach
                             <div class="col-lg-12 col-sm-12 col-12 total-section text-right">
                                 <p>Total: <span class="text-success">Rp {{ $total }}</span></p>
@@ -34,11 +34,11 @@
                         @foreach(session('cart') as $id => $details)
                         <div class="row cart-detail">
                             <div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
-                                <img src="{{ asset('img') }}/{{ $details['photo'] }}" />
+                                <img src="{{ asset('img') }}/{{ $details['gambar'] }}" />
                             </div>
                             <div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
-                                <p>{{ $details['product_name'] }}</p>
-                                <span class="price text-success"> Rp{{ $details['price'] }}</span> <span class="count">
+                                <p>{{ $details['nama_menu'] }}</p>
+                                <span class="price text-success"> Rp{{ $details['harga'] }}</span> <span class="count">
                                     Quantity:{{ $details['quantity'] }}</span>
                             </div>
                         </div>
@@ -70,5 +70,10 @@
 
     @yield('scripts')
 </body>
+
+
+
+
+
 
 </html>
