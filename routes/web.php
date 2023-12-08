@@ -37,6 +37,8 @@ Route::get('cart', [ProductsController::class, 'cart'])->name('cart');
 Route::get('add-to-cart/{id_menu}', [ProductsController::class, 'addToCart'])->name('add_to_cart');
 Route::patch('update-cart', [ProductsController::class, 'update'])->name('update_cart');
 Route::delete('remove-from-cart', [ProductsController::class, 'remove'])->name('remove_from_cart');
+Route::post('/checkout', [StripeController::class, 'checkout'])->name('checkout');
+
 
 
 //pny Faisal
