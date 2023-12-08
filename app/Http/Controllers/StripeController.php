@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class StripeController extends Controller
 {
 
-    public function session(Request $request)
+    public function checkout(Request $request)
     {
         //$user         = auth()->user();
         $productItems = [];
@@ -34,7 +34,7 @@ class StripeController extends Controller
                     'product_data' => [
                         'name' => $nama_menu,
                     ],
-                    'currency'     => 'USD',
+                    'currency'     => 'IDR',
                     'unit_amount'  => $unit_amount,
                 ],
                 'quantity' => $quantity
@@ -48,7 +48,7 @@ class StripeController extends Controller
             'metadata'              => [
                 'user_id' => "0001"
             ],
-            'customer_email' => "cairocoders-ednalan@gmail.com", //$user->email,
+            'customer_email' => "Customer@gmail.com", //$user->email,
             'success_url' => route('success'),
             'cancel_url'  => route('cancel'),
         ]);
@@ -63,6 +63,6 @@ class StripeController extends Controller
 
     public function cancel()
     {
-        return view('cancel');
+        return view('customer/cancel');
     }
 }
