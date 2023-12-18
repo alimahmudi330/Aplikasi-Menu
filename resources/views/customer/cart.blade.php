@@ -48,8 +48,10 @@
             <td colspan="5" style="text-align:right;">
                 <form action="{{ route('checkout') }}" method="POST">
                     @csrf
-                    <a href="{{ url('/') }}" class="btn btn-danger"> <i class="fa fa-arrow-left"></i> Continue Shopping</a>
-                    <button class="btn btn-success" type="submit" id="checkout-live-button"><i class="fa fa-money"></i> Checkout</button>
+                    <a href="{{ url('/') }}" class="btn btn-danger"> <i class="fa fa-arrow-left"></i> Continue
+                        Shopping</a>
+                    <button class="btn btn-success" type="submit" id="checkout-live-button"><i class="fa fa-money"></i>
+                        Checkout</button>
                 </form>
             </td>
         </tr>
@@ -88,10 +90,11 @@
         if (confirm("Do you really want to remove?")) {
             $.ajax({
                 url: 'remove_from_cart',
-                method: "DELETE",
+                type: "POST",
                 data: {
                     _token: '{{ csrf_token() }}',
-                    id: ele.parents("tr").attr("data-id")
+                    _method: 'delete',
+                    id: ele.parents("tr").attr("data-id_makanan")
                 },
                 success: function(response) {
                     window.location.reload();
