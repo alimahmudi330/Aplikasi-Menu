@@ -89,7 +89,7 @@
 
         if (confirm("Do you really want to remove?")) {
             $.ajax({
-                url: 'remove_from_cart',
+                url: '{{ route("remove_from_cart") }}',
                 method: "DELETE",
                 data: {
                     _token: '{{ csrf_token() }}',

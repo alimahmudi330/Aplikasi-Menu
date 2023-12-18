@@ -18,6 +18,7 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('login', 'loginAction')->name('login.action');
 
     Route::get('logout', 'logout')->middleware('auth')->name('logout');
+    Route::get('/customer/about', [AuthController::class, 'about'])->name('about');
 });
 
 Route::middleware('auth')->group(function () {

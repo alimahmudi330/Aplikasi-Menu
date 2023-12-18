@@ -70,4 +70,10 @@ class AuthController extends Controller
     {
         return view('profile');
     }
+
+    public function about()
+    {
+
+        return view('customer/about');
+    }
 }

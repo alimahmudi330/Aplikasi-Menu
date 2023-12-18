@@ -109,4 +109,9 @@ class MenuController extends Controller
             return redirect()->route('menu.index')->with('error', 'Data menu tidak ditemukan.');
         }
     }
+
+    public function loginAdmin()
+    {
+        return view('auth/login');
+    }
 }

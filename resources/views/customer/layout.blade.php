@@ -15,6 +15,11 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-sm-12 col-12">
+
+                <!-- <a href="{{ route('about') }}" class="btn btn-warning">About</a> -->
+
+                <!-- <a href="{{ route('login') }}" class="btn btn-dark">Login Admin</a> -->
+
                 <div class="dropdown">
                     <button id="dLabel" type="button" class="btn btn-primary" data-bs-toggle="dropdown">
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span class="badge bg-danger">{{ count((array) session('cart')) }}</span>
@@ -66,5 +71,12 @@
 
     @yield('scripts')
 </body>
+
+
+
+
+
+
+
 
 </html>
