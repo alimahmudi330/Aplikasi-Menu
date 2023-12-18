@@ -49,8 +49,10 @@
                 <form action="{{ route('checkout') }}" method="POST">
                     @csrf
                     <a href="{{ url('/') }}" class="btn btn-danger"> <i class="fa fa-arrow-left"></i> Continue
+
                         Shopping</a>
                     <button class="btn btn-success" type="submit" id="checkout-live-button"><i class="fa fa-money"></i>
+
                         Checkout</button>
                 </form>
             </td>
@@ -69,19 +71,17 @@
         var price = ele.parents("tr").find("td[data-th='Price']").text().replace("Rp", "");
         var subtotal = quantity * price;
 
-        // Update subtotal
         ele.parents("tr").find("td[data-th='Subtotal']").text("Rp" + subtotal);
 
-        // Hitung total ulang
         var total = 0;
         $(".subtotal").each(function() {
             total += parseFloat($(this).text().replace("Rp", ""));
         });
 
-        // Update total
         $("#total").text(total);
     });
 
+    //
     $(".cart_remove").click(function(e) {
         e.preventDefault();
 
@@ -90,11 +90,10 @@
         if (confirm("Do you really want to remove?")) {
             $.ajax({
                 url: 'remove_from_cart',
-                type: "POST",
+                method: "DELETE",
                 data: {
                     _token: '{{ csrf_token() }}',
-                    _method: 'delete',
-                    id: ele.parents("tr").attr("data-id_makanan")
+                    id: ele.parents("tr").attr("data-id")
                 },
                 success: function(response) {
                     window.location.reload();
