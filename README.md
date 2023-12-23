@@ -24,7 +24,7 @@ Sebelum menggunakan projek ini, diperlukanya:
     + cp .env.example .env
 5. Lalu generate APP_KEY
     + php artisan key:generate
-6. Lalu lakukan migrasi database dan query (isi database)
+6. Lalu lakukan migrasi database dan query
     + php artisan migrate:fresh --seed
 7. Setelah berhasil, jalankan aplikasi
     + php artisan serve
