@@ -15,17 +15,21 @@ Sebelum menggunakan projek ini, diperlukanya:
 
 ## Install
 1. Unduh/Clone proyek ini
-- git clone https://github.com/alimahmudi330/Aplikasi-Menu-Rumah-Makan.git
+    + git clone https://github.com/alimahmudi330/Aplikasi-Menu-Rumah-Makan.git
 2. Lalu pindah ke direktori Aplikasi-Menu-Rumah-Makan
-- cd Aplikasi-Menu-Rumah-Makan
+    + cd Aplikasi-Menu-Rumah-Makan
 3. Install komponen yang diperlukan menggunakan composer
-- composer install
+    + composer install
 4. Copy file .env.example menjadi .env
-- cp .env.example .env
+    + cp .env.example .env
 5. Lalu generate APP_KEY
-- php artisan key:generate
+    + php artisan key:generate
 6. Lalu lakukan migrasi database dan query (isi database)
-- php artisan migrate:fresh --seed
+    + php artisan migrate:fresh --seed
 7. Setelah berhasil, jalankan aplikasi
-- php artisan serve
+    + php artisan serve
 8. Lalu buka browser 127.0.0.1:8000 untuk menggunakan aplikasi
+
+## License
+
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
