@@ -16,7 +16,7 @@ Sebelum menggunakan projek ini, diperlukanya:
 ## Install
 1. Unduh/Clone proyek ini
     + git clone https://github.com/alimahmudi330/Aplikasi-Menu.git
-2. Lalu pindah ke direktori Aplikasi-Menu-Rumah-Makan
+2. Lalu pindah ke direktori Aplikasi-Menu
     + cd Aplikasi-Menu
 3. Install komponen yang diperlukan menggunakan composer
     + composer install
