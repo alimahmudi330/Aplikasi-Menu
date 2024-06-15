@@ -17,7 +17,7 @@ Sebelum menggunakan projek ini, diperlukanya:
 1. Unduh/Clone proyek ini
     + git clone https://github.com/alimahmudi330/Aplikasi-Menu-Rumah-Makan.git
 2. Lalu pindah ke direktori Aplikasi-Menu-Rumah-Makan
-    + cd Aplikasi-Menu-Rumah-Makan
+    + cd Aplikasi-Menu
 3. Install komponen yang diperlukan menggunakan composer
     + composer install
 4. Copy file .env.example menjadi .env
