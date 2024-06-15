@@ -15,7 +15,7 @@ Sebelum menggunakan projek ini, diperlukanya:
 
 ## Install
 1. Unduh/Clone proyek ini
-    + git clone https://github.com/alimahmudi330/Aplikasi-Menu-Rumah-Makan.git
+    + git clone https://github.com/alimahmudi330/Aplikasi-Menu.git
 2. Lalu pindah ke direktori Aplikasi-Menu-Rumah-Makan
     + cd Aplikasi-Menu
 3. Install komponen yang diperlukan menggunakan composer
@@ -25,7 +25,7 @@ Sebelum menggunakan projek ini, diperlukanya:
 5. Lalu generate APP_KEY
     + php artisan key:generate
 6. Lalu lakukan migrasi database dan query
-    + php artisan migrate:fresh --seed
+    + php artisan migrate
 7. Setelah berhasil, jalankan aplikasi
     + php artisan serve
 8. Lalu buka browser 127.0.0.1:8000 untuk menggunakan aplikasi
